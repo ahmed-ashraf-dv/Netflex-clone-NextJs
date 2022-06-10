@@ -1,0 +1,17 @@
+{
+  "accounts": [
+    {
+      "id": 1,
+      "email": "ahmdgun0@gmail.com",
+      "password": 123123123,
+      "token": "sad4asd1as4"
+    }
+  ],
+  "userlist": [
+    {
+      "id": 1,
+      "token": "sad4asd1as4",
+      "fav": []
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+.loginPage {
+  position: relative;
+  min-height: 100vh;
+
+  .header {
+    z-index: 99;
+    position: fixed;
+    width: 100%;
+  }
+
+  .form {
+    position: relative;
+    z-index: 99;
+    width: 100%;
+    max-width: 400px;
+    background-color: rgba(0, 0, 0, 0.85);
+    padding: 40px 50px;
+
+    h2 {
+      width: 100%;
+      margin-bottom: 25px;
+    }
+
+    .inputGroub {
+      margin-bottom: 10px;
+    }
+
+    input {
+      padding: 12px;
+      border: none;
+      outline: none;
+      border-radius: 4px;
+      background-color: #333;
+      color: white;
+      caret-color: red;
+
+      &:focus {
+        background-color: rgb(66, 66, 66);
+      }
+    }
+
+    button {
+      margin-top: 25px;
+    }
+
+    input,
+    button {
+      width: 100%;
+    }
+
+    .signupMethod {
+      width: 100%;
+      margin-top: 35px;
+
+      span {
+        cursor: pointer;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}

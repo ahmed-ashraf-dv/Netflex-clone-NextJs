@@ -1,0 +1,70 @@
+.mainHeader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  transition: 0.4s;
+
+  &.active {
+    background-color: #00030a;
+  }
+
+  nav.smScreen {
+    display: none;
+    position: relative;
+
+    ul {
+      position: absolute;
+      top: 100%;
+      min-width: 160px;
+      left: 0px;
+      transition: 0.4s;
+      max-height: 0;
+      overflow: hidden;
+      padding: 0;
+
+      &.active {
+        max-height: 600px !important;
+        padding: {
+          top: 1rem;
+          bottom: 1rem;
+          right: 1.5rem;
+          left: 1.5rem;
+        }
+      }
+    }
+
+    button {
+      transition: 0.4s;
+
+      &:hover {
+        background-color: #00000031;
+      }
+    }
+  }
+
+  .hoverNavigate {
+    transition: 0.4s;
+
+    &.active {
+      color: white;
+      cursor: default;
+      font-weight: 500;
+    }
+
+    &:hover:not(.active) {
+      color: rgb(100, 91, 91);
+    }
+  }
+
+  @media (max-width: 830px) {
+    nav.lgScreen {
+      display: none;
+    }
+
+    nav.smScreen {
+      display: block;
+    }
+  }
+}

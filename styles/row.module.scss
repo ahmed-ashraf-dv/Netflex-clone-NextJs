@@ -1,0 +1,75 @@
+.thumbnailsRow {
+  position: relative;
+  z-index: 10;
+  user-select: none;
+
+  .thumbnailsGroup {
+    display: flex;
+    overflow-x: scroll;
+    position: relative;
+    padding: {
+      top: 5px;
+      bottom: 15px;
+      left: 10px;
+      right: 10px;
+    }
+    scroll-behavior: smooth;
+
+    &::-webkit-scrollbar-thumb {
+      background-color: transparent;
+    }
+
+    &::-webkit-scrollbar-track {
+      background-color: transparent;
+    }
+
+    &::-webkit-scrollbar {
+      width: 1px;
+    }
+
+    .thumbnail {
+      width: 250px;
+      min-width: 250px;
+      height: 150px;
+      transition: 0.4s;
+      cursor: pointer;
+      position: relative;
+
+      & img {
+        border-radius: 8px;
+      }
+
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+  }
+
+  .arrow {
+    position: absolute;
+    z-index: 99;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 30px;
+    cursor: pointer;
+    opacity: 0.6;
+    transition: 0.4s;
+    background: #ff000099;
+    padding: {
+      inline: 5px;
+      block: 10px;
+    }
+
+    &:hover {
+      opacity: 1;
+    }
+
+    &.toRight {
+      right: 0;
+    }
+
+    &.toLeft {
+      left: 0;
+    }
+  }
+}
