@@ -47,7 +47,7 @@ const HomeCover = ({ reandomMovie, notify }) => {
             <h2 className={`text-light ${style.title}`}>
               {reandomMovie.title}
             </h2>
-            <p className="text-light">{reandomMovie.overview}</p>
+            <p className=`text-light ${style.prgraph}`>{reandomMovie.overview}</p>
 
             <div className={`${style.btns} flex-align-start gap-2`}>
               <button
