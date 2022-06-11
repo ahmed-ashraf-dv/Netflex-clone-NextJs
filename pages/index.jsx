@@ -8,7 +8,7 @@ import axios from "axios";
 import { Fragment, useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 
-const App = ({ movies, userDetails }) => {
+const App = ({ movies, userDetails, reandomMovie }) => {
   const [favList, setFavList] = useState([]);
 
   const notify = (msg) => {
@@ -54,10 +54,7 @@ const App = ({ movies, userDetails }) => {
       />
       <main className="home pb-4">
         <Navbar />
-        <HomeCover
-          notify={notify}
-          netflixOriginals={movies.fetchNetflixOriginals}
-        />
+        <HomeCover notify={notify} reandomMovie={reandomMovie} />
 
         <div className="container rows">
           {/* My List */}
@@ -116,7 +113,14 @@ export const getServerSideProps = async ({ req }) => {
     requests.map((request) => axios(request).then(({ data }) => data))
   );
 
+  const reandomMovie = () => {
+    const allMovies = movies.fetchNetflixOriginals;
+    const randomIdx = Math.floor(Math.random() * allMovies.length - 1);
+
+    return allMovies[randomIdx];
+  };
+
   return {
-    props: { movies, userDetails },
+    props: { movies, userDetails, reandomMovie: reandomMovie() },
   };
 };

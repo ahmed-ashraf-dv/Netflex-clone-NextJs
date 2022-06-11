@@ -21,7 +21,7 @@ const handelar = async (_, res) => {
     )
   );
 
-  const filters = res.status(200).json({
+  res.status(200).json({
     fetchTrending,
     fetchNetflixOriginals,
     fetchTopRated,

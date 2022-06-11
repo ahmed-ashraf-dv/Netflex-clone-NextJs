@@ -31,11 +31,9 @@ const Thumbnail = ({ thumbnailData, notify }) => {
     >
       <Image
         layout="fill"
-        src={IMG_BASE_URL + thumbnailData.poster_path}
-        alt=""
-        width={260}
-        height={144}
         objectFit="cover"
+        src={IMG_BASE_URL + thumbnailData.poster_path}
+        alt="Error in server"
       />
     </article>
   );

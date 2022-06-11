@@ -57,8 +57,6 @@ const Navbar = ({ second = false, brand, accountFlag }) => {
     };
   }, []);
 
-  const hadelSmNav = () => {};
-
   return (
     <header className={`${style.mainHeader} ${isActive ? style.active : ""}`}>
       <div className="container flex-between">
@@ -102,9 +100,6 @@ const Navbar = ({ second = false, brand, accountFlag }) => {
                   </li>
                   <li className={`cu-pointer py-2 ${style.hoverNavigate}`}>
                     New & Popular
-                  </li>
-                  <li className={`cu-pointer py-2 ${style.hoverNavigate}`}>
-                    My List
                   </li>
                 </ul>
               </nav>
