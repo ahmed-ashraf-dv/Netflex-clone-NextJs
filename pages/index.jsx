@@ -8,8 +8,8 @@ import axios from "axios";
 import { Fragment, useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 
-const App = ({ movies, userList }) => {
-  const [favList, setFavList] = useState(userList);
+const App = ({ movies, userDetails }) => {
+  const [favList, setFavList] = useState([]);
 
   const notify = (msg) => {
     toast.error(msg, {
@@ -25,6 +25,8 @@ const App = ({ movies, userList }) => {
   };
 
   const addMovieToFav = (id) => {
+    if (!userDetails?.id) return notify("Please login to continue");
+
     const movie = Object.keys(movies)
       .map((key) => {
         return movies[key].find((movie) => movie.id === id);
@@ -107,14 +109,14 @@ export const getServerSideProps = async ({ req }) => {
 
   const requests = [
     `http://${host}/api/movies`,
-    `http://${host}/api/getuserlist?token=${token}`,
+    `http://${host}/api/getuser?token=${token}`,
   ];
 
-  const [movies, userList] = await axios.all(
+  const [movies, userDetails] = await axios.all(
     requests.map((request) => axios(request).then(({ data }) => data))
   );
 
   return {
-    props: { movies, userList },
+    props: { movies, userDetails },
   };
 };

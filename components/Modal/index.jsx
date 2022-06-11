@@ -53,7 +53,7 @@ const Modal = ({ addMovieToFav, favList, delMovieFromFav }) => {
               <h5 className="modal-title">Trailer Movie</h5>
               <button
                 type="button"
-                className="btn-close"
+                className="btn-close btn-close-white"
                 data-dismiss="modal"
                 aria-label="Close"
                 onClick={closeModalHandelar}

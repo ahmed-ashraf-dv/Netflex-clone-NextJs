@@ -1,8 +1,20 @@
 import axios from "axios";
 
-const createToken = () => {
-  const result = Math.random().toString(36).substr(2);
+const generateToken = (num = 12) => {
+  // Init result
+  let result = "";
 
+  // Push the random chr
+  while (result.length < num) {
+    const randomChr = Math.random().toString(36).substr(2);
+
+    result += randomChr;
+  }
+
+  // Slice result to get same num in argument
+  result = result.slice(0, num);
+
+  // return result after gnerate it
   return result;
 };
 
@@ -24,7 +36,7 @@ const handelar = async (req, res) => {
     data: {
       email,
       password,
-      token: createToken(),
+      token: generateToken(16),
     },
   });
 

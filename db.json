@@ -5,13 +5,12 @@
       "email": "ahmdgun0@gmail.com",
       "password": 123123123,
       "token": "sad4asd1as4"
-    }
-  ],
-  "userlist": [
+    },
     {
-      "id": 1,
-      "token": "sad4asd1as4",
-      "fav": []
+      "email": "ahmdgun1@gmail.com",
+      "password": "123123123",
+      "token": "nnntdhyj1xq",
+      "id": 2
     }
   ]
 }
