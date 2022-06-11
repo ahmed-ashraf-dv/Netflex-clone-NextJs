@@ -62,11 +62,6 @@ const App = ({ movies, userDetails, reandomMovie }) => {
 
           <Row
             notify={notify}
-            title="Trending Now"
-            movies={movies.fetchTrending}
-          />
-          <Row
-            notify={notify}
             title="Top Rated"
             movies={movies.fetchTopRated}
           />
@@ -79,6 +74,11 @@ const App = ({ movies, userDetails, reandomMovie }) => {
             notify={notify}
             title="Comedies"
             movies={movies.fetchComedyMovies}
+          />
+          <Row
+            notify={notify}
+            title="Trending Now"
+            movies={movies.fetchTrending}
           />
           <Row
             notify={notify}
