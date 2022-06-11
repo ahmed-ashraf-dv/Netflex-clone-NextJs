@@ -1,11 +1,13 @@
 import axios from "axios";
 
+const LOCAL_API = process.env.NEXT_PUBLIC_PUBLIC_API;
+
 const handelar = async (req, res) => {
   const { token } = req.query;
 
   if (!token) return res.status(200).json({ msg: "user not found" });
 
-  const { data } = await axios(`http://localhost:3005/accounts?token=${token}`);
+  const { data } = await axios(`${LOCAL_API}/accounts?token=${token}`);
 
   if (!data.length) return res.status(200).json({ msg: "user not found" });
 

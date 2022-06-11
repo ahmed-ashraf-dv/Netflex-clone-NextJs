@@ -101,14 +101,15 @@ const Account = ({ userDetails }) => {
 export default Account;
 
 // Get User Data
+const LOCAL_API = process.env.NEXT_PUBLIC_LOCAL_API;
+
 export const getServerSideProps = async ({ req }) => {
-  const { cookies, headers } = req;
-  const { host } = headers;
+  const { cookies } = req;
   const { token } = cookies;
 
   if (!token) return redirectTo("/login");
 
-  const { data } = await axios(`http://${host}/api/getuser?token=${token}`);
+  const { data } = await axios(`${LOCAL_API}/getuser?token=${token}`);
 
   if (!data.id) return redirectTo("/login");
 

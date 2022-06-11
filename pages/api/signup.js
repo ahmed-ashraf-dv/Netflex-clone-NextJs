@@ -18,6 +18,8 @@ const generateToken = (num = 12) => {
   return result;
 };
 
+const LOCAL_API = process.env.NEXT_PUBLIC_PUBLIC_API;
+
 const handelar = async (req, res) => {
   if (req.method !== "POST") {
     return res.status(200).json({ msg: req.method, error: true });
@@ -25,13 +27,13 @@ const handelar = async (req, res) => {
 
   const { email, password } = req.body;
 
-  const { data } = await axios(`http://localhost:3005/accounts?email=${email}`);
+  const { data } = await axios(`${LOCAL_API}/accounts?email=${email}`);
 
   if (data.length) {
     return res.status(200).json({ msg: "Email alredy exist", error: true });
   }
 
-  await axios(`http://localhost:3005/accounts`, {
+  await axios(`${LOCAL_API}/accounts`, {
     method: "POST",
     data: {
       email,
@@ -41,7 +43,7 @@ const handelar = async (req, res) => {
   });
 
   const token = await axios(
-    `http://localhost:3005/accounts?email=${email}&password=${password}`
+    `${LOCAL_API}/accounts?email=${email}&password=${password}`
   ).then(({ data }) => data[0].token);
 
   res.status(200).json({ token });

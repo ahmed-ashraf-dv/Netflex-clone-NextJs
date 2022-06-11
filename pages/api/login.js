@@ -1,11 +1,11 @@
 import axios from "axios";
 
+const LOCAL_API = process.env.NEXT_PUBLIC_PUBLIC_API;
+
 const handelar = async (req, res) => {
   const { email, password } = req.body;
 
-  axios(
-    `http://localhost:3005/accounts?email=${email}&password=${password}&_limit=1`
-  )
+  axios(`${LOCAL_API}/accounts?email=${email}&password=${password}&_limit=1`)
     .then(({ data }) => {
       res.status(200).json({ token: data?.[0].token });
     })

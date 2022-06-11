@@ -15,7 +15,7 @@ const HomeCover = ({ reandomMovie, notify }) => {
   const dispatch = useDispatch();
 
   const openModalTrailer = (videoId) => {
-    axios(`http://localhost:3000/api/trailer?videoId=${videoId}`)
+    axios(`/api/trailer?videoId=${videoId}`)
       .then(({ data }) => {
         if (!data.youtubeId) {
           return notify("error in server test another video");

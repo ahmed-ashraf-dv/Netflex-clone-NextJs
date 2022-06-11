@@ -99,14 +99,15 @@ const App = ({ movies, userDetails, reandomMovie }) => {
 
 export default App;
 
+const LOCAL_API = process.env.NEXT_PUBLIC_LOCAL_API;
+
 export const getServerSideProps = async ({ req }) => {
-  const { cookies, headers } = req;
-  const { host } = headers;
+  const { cookies } = req;
   const { token } = cookies;
 
   const requests = [
-    `http://${host}/api/movies`,
-    `http://${host}/api/getuser?token=${token}`,
+    `${LOCAL_API}/movies`,
+    `${LOCAL_API}/getuser?token=${token}`,
   ];
 
   const [movies, userDetails] = await axios.all(
