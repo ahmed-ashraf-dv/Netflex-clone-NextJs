@@ -39,7 +39,7 @@ const Modal = ({ addMovieToFav, favList, delMovieFromFav }) => {
         } modal fade bd-example-modal-lg`}
         style={
           isOpen
-            ? { display: "block", paddingRight: "17px" }
+            ? { display: "block" }
             : { display: "none" }
         }
         tabIndex="-1"
