@@ -105,6 +105,8 @@ export const getServerSideProps = async ({ req }) => {
   const { cookies } = req;
   const { token } = cookies;
 
+  console.log(token);
+
   const requests = [
     `${LOCAL_API}/movies`,
     `${LOCAL_API}/getuser?token=${token}`,

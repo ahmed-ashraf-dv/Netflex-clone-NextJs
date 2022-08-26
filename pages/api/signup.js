@@ -18,7 +18,7 @@ const generateToken = (num = 12) => {
   return result;
 };
 
-const LOCAL_API = process.env.NEXT_PUBLIC_PUBLIC_API;
+const LOCAL_API = process.env.NEXT_PUBLIC_JSON;
 
 const handelar = async (req, res) => {
   if (req.method !== "POST") {
