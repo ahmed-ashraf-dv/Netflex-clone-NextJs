@@ -11,6 +11,18 @@ import { FaPlay } from "react-icons/fa";
 import { IMG_BASE_URL } from "../../utils/requests";
 import axios from "axios";
 
+const imgs = {
+    num: 4,
+    path: "/static/cover",
+    ext: "webp"
+};
+
+const getRandomImg = () => {
+    const num = Math.ceil(Math.random() * (imgs.num - 1) + 1);
+
+    return `${imgs.path}/0${num}.${imgs.ext}`
+}
+
 const HomeCover = ({ reandomMovie, notify }) => {
   const dispatch = useDispatch();
 
@@ -35,10 +47,7 @@ const HomeCover = ({ reandomMovie, notify }) => {
           layout="fill"
           alt="error"
           priority={Math.random()}
-          src={
-            IMG_BASE_URL + reandomMovie.backdrop_path ||
-            reandomMovie.poster_path
-          }
+          src={getRandomImg()}
         />
       </div>
       <div className="container h-100">
