@@ -47,7 +47,7 @@ const Modal = ({ addMovieToFav, favList, delMovieFromFav }) => {
         aria-labelledby="myLargeModalLabel"
         aria-hidden="true"
       >
-        <div className={`modal-dialog modal-lg ${style.backdrop}`}>
+        <div className={`modal-dialog modal-lg w-100`}>
           <div className="modal-content bg-dark text-light">
             <div className="modal-header">
               <h5 className="modal-title">Trailer Movie</h5>
