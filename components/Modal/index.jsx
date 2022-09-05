@@ -36,10 +36,10 @@ const Modal = ({ addMovieToFav, favList, delMovieFromFav }) => {
         onClick={checkClicked}
         className={`${style.trailerModal} ${
           isOpen ? "show" : ""
-        } modal fade bd-example-modal-lg`}
+        } modal fade bd-example-modal-lg flex-center`}
         style={
           isOpen
-            ? { display: "block" }
+            ? { display: "flex" }
             : { display: "none" }
         }
         tabIndex="-1"
