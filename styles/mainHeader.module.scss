@@ -5,9 +5,10 @@
   width: 100%;
   z-index: 999;
   transition: 0.4s;
+  background-color: #000000a1;
 
   &.active {
-    background-color: #00030a;
+    background-color: #00030a !important;
   }
 
   nav.smScreen {
