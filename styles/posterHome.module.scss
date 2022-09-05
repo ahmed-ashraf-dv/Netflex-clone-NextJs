@@ -17,6 +17,10 @@
 
     .info {
       padding-top: 150px;
+      display: flex;
+      justify-content: center;
+      align-items: start;
+      flex-direction: column;
 
       .title {
         font-size: 3.5rem;
