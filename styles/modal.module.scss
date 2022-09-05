@@ -3,11 +3,6 @@
   transform: scale(0);
   animation: openModal 0.45s forwards;
   
-  .backdrop {
-    width: 100%;
-    max-width: 850px
-  }
-
   @keyframes openModal {
     80% {
       transform: scale(1.15);
